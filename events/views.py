@@ -25,10 +25,10 @@ def event_form(request, id=0):
             form = EventForm(request.POST, instance=event)
         if form.is_valid():
             form.save()
-        return redirect("/events/list")
+        return redirect("/list")
     
 
 def event_delete(request, id):
     event = Event.objects.get(pk=id)
     event.delete()
-    return redirect("/events/list")
+    return redirect("/list")
